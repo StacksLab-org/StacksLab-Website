@@ -30,15 +30,15 @@ const Waitlist: React.FC = () => {
               <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              You're on the list! 🎉
+              You&apos;re on the list! 🎉
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Thanks for joining our waitlist. We'll notify you as soon as StacksLab is ready for early access.
+              Thanks for joining our waitlist. We&apos;ll notify you as soon as StacksLab is ready for early access.
             </p>
             <div className="bg-gray-50 rounded-lg p-6">
-              <p className="text-sm text-gray-600 mb-2">What's next?</p>
+              <p className="text-sm text-gray-600 mb-2">What&apos;s next?</p>
               <ul className="text-sm text-gray-700 space-y-2">
-                <li>• We'll send you exclusive updates on our progress</li>
+                <li>• We&apos;ll send you exclusive updates on our progress</li>
                 <li>• Early access invitation when we launch beta</li>
                 <li>• Special pricing for early supporters</li>
               </ul>
