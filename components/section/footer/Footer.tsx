@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 py-16 px-8">
+    <footer className="bg-white border-t border-gray-200 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
 
           <div className="md:col-span-1">
             <StacksLabLogo />

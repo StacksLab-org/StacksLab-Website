@@ -62,18 +62,18 @@ const HowItWorks: React.FC = () => {
   ]
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             How StacksLab Works
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
             Get your smart contracts from development to deployment in four simple steps.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-8 relative">
           {steps.map((step, index) => (
             <Step
               key={index}

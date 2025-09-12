@@ -59,45 +59,93 @@ export const StacksLabLogo: React.FC = () => (
 )
 
 const Navbar: React.FC = () => {
+    const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+
     return (
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <StacksLabLogo />
+                        <div className="w-20 sm:w-24 md:w-28">
+                            <StacksLabLogo />
+                        </div>
                     </div>
 
-                    {/* Navigation Links */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    {/* Navigation Links - Desktop */}
+                    <div className="hidden lg:flex items-center space-x-8">
                         <NavItem href="#home">Home</NavItem>
                         <NavItem href="#features">Features</NavItem>
                         <NavItem href="#docs" comingSoon>Documentation</NavItem>
                         <NavItem href="#community" comingSoon>Community</NavItem>
                     </div>
 
-                    {/* Right Side Buttons */}
-                    <div className="flex items-center space-x-4">
+                    {/* Right Side Buttons - Desktop */}
+                    <div className="hidden md:flex items-center space-x-3">
                         <a 
                             href="https://github.com/StacksLab-org" 
-                            className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 p-2"
                             aria-label="GitHub"
                         >
-                            <BsGithub size={20} />
+                            <BsGithub size={18} />
                         </a>
                         <Button variant="secondary" href="#waitlist">Join Waitlist</Button>
-                        <Button variant="primary" href="#demo">Request Demo</Button>
+                        <Button variant="primary" href="#demo">Connect Wallet</Button>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <div className="md:hidden">
-                        <button className="text-gray-600 hover:text-gray-900">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {/* Mobile Right Side */}
+                    <div className="flex md:hidden items-center space-x-2">
+                        <a 
+                            href="https://github.com/StacksLab-org" 
+                            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 p-2"
+                            aria-label="GitHub"
+                        >
+                            <BsGithub size={18} />
+                        </a>
+                        <Button variant="primary" href="#waitlist">Join</Button>
+                        
+                        {/* Mobile menu button */}
+                        <button 
+                            className="text-gray-600 hover:text-gray-900 p-2"
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
                     </div>
                 </div>
+
+                {/* Mobile Menu */}
+                {mobileMenuOpen && (
+                    <div className="md:hidden border-t border-gray-200 bg-white">
+                        <div className="px-2 pt-2 pb-3 space-y-1">
+                            <a href="#home" className="block px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                                Home
+                            </a>
+                            <a href="#features" className="block px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                                Features
+                            </a>
+                            <div className="flex items-center px-3 py-2">
+                                <span className="text-gray-600 text-sm font-medium">Documentation</span>
+                                <span className="ml-2 px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded">
+                                    SOON
+                                </span>
+                            </div>
+                            <div className="flex items-center px-3 py-2">
+                                <span className="text-gray-600 text-sm font-medium">Community</span>
+                                <span className="ml-2 px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded">
+                                    SOON
+                                </span>
+                            </div>
+                            <div className="px-3 py-2 space-y-2">
+                                <Button variant="secondary" href="#waitlist">Join Waitlist</Button>
+                                <Button variant="primary" href="#demo">Connect Wallet</Button>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </nav>
     )

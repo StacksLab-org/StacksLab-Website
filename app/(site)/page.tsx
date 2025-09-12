@@ -89,26 +89,26 @@ const StacksHero: React.FC = () => (
 
 const HeroSection: React.FC = () => {
     return (
-        <section className="bg-white py-5 lg:py-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <section className="bg-white py-12 sm:py-16 lg:py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                     {/* Left Content */}
-                    <div className="max-w-xl">
-                        <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
-                            <p className='text-blue-500'> Build & Test Smart </p>  Contracts on StacksLab
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                            <span className="text-blue-600">Build & Test Smart</span> Contracts on StacksLab
                         </h1>
 
-                        <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                             StacksLab is the complete development platform for Stacks blockchain.
                             Write, test, and deploy Clarity smart contracts with confidence using
                             our powerful simulation and testing environment.
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center lg:justify-start">
                             <HeroButton variant="primary" href="#waitlist">
                                 Join Waitlist
-                                <ArrowRight className="w-5 h-5 ml-2" />
+                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                             </HeroButton>
                             <HeroButton variant="secondary" href="#demo">
                                 Request Demo

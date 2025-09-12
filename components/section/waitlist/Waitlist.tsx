@@ -50,41 +50,41 @@ const Waitlist: React.FC = () => {
   }
 
   return (
-    <section id="waitlist" className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+    <section id="waitlist" className="bg-gradient-to-br from-blue-50 to-indigo-100 py-12 sm:py-16 lg:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Left Content */}
-            <div className="p-12 lg:p-16">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <Mail className="w-6 h-6 text-blue-600" />
+            <div className="p-6 sm:p-8 lg:p-12 xl:p-16">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
               </div>
               
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Join the Waitlist
               </h2>
               
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 Be among the first to experience StacksLab. Get early access, 
                 exclusive updates, and help shape the future of Stacks development.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Early access to beta platform</span>
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-gray-700">Early access to beta platform</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Exclusive development updates</span>
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-gray-700">Exclusive development updates</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Special launch pricing</span>
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-gray-700">Special launch pricing</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Direct feedback channel</span>
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-gray-700">Direct feedback channel</span>
                 </div>
               </div>
             </div>

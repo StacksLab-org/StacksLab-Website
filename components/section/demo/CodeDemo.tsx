@@ -27,64 +27,64 @@ const CodeDemo: React.FC = () => {
   }
 
   return (
-    <section className="bg-gray-900 py-20">
+    <section className="bg-gray-900 py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="text-white">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+          <div className="text-white text-center lg:text-left order-2 lg:order-1">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
               Write Clarity contracts with confidence
             </h2>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Our interactive environment lets you write, test, and debug Clarity smart contracts 
               with real-time feedback. See your code in action before deploying to mainnet.
             </p>
             
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                <span className="text-gray-300">Syntax highlighting and auto-completion</span>
+            <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+              <div className="flex items-center justify-center lg:justify-start">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">Syntax highlighting and auto-completion</span>
               </div>
-              <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                <span className="text-gray-300">Real-time error detection</span>
+              <div className="flex items-center justify-center lg:justify-start">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">Real-time error detection</span>
               </div>
-              <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                <span className="text-gray-300">Interactive testing environment</span>
+              <div className="flex items-center justify-center lg:justify-start">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">Interactive testing environment</span>
               </div>
             </div>
 
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-200">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-200 w-full sm:w-auto">
               Try the Editor
             </button>
           </div>
 
           {/* Right Content - Code Editor */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+          <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 order-1 lg:order-2">
             {/* Editor Header */}
-            <div className="bg-gray-700 px-4 py-3 flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="bg-gray-700 px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between">
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
               </div>
-              <span className="text-gray-300 text-sm">token-contract.clar</span>
-              <div className="flex items-center space-x-2">
+              <span className="text-gray-300 text-xs sm:text-sm truncate mx-2">token-contract.clar</span>
+              <div className="flex items-center space-x-1 sm:space-x-2">
                 <button
                   onClick={handleCopy}
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 p-1"
                 >
-                  {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  {copied ? <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4" /> : <Copy className="w-3 h-3 sm:w-4 sm:h-4" />}
                 </button>
-                <button className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <Play className="w-4 h-4" />
+                <button className="text-gray-400 hover:text-white transition-colors duration-200 p-1">
+                  <Play className="w-3 h-3 sm:w-4 sm:h-4" />
                 </button>
               </div>
             </div>
 
             {/* Code Content */}
-            <div className="p-4 font-mono text-sm">
+            <div className="p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-x-auto">
               <pre className="text-gray-300 leading-relaxed">
                 <code>
                   <span className="text-purple-400">(define-public</span> <span className="text-blue-400">(transfer</span> <span className="text-yellow-400">(amount uint)</span> <span className="text-yellow-400">(recipient principal)</span><span className="text-blue-400">)</span>
@@ -104,9 +104,9 @@ const CodeDemo: React.FC = () => {
             </div>
 
             {/* Status Bar */}
-            <div className="bg-gray-700 px-4 py-2 text-xs text-gray-400 flex items-center justify-between">
-              <span>✓ No errors found</span>
-              <span>Clarity • 12 lines</span>
+            <div className="bg-gray-700 px-3 sm:px-4 py-2 text-xs text-gray-400 flex items-center justify-between">
+              <span className="truncate">✓ No errors found</span>
+              <span className="ml-2 flex-shrink-0">Clarity • 12 lines</span>
             </div>
           </div>
         </div>
