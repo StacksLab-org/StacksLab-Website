@@ -78,6 +78,15 @@ const Features: React.FC = () => {
     <section className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <div className="flex items-center space-x-2 px-4 py-2 bg-blue-50 rounded-full">
+              <svg className="w-5 h-5" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#5546FF"/>
+                <path d="M20 8L32 20L20 32L8 20L20 8Z" fill="white"/>
+              </svg>
+              <span className="text-sm font-medium text-blue-700">Built for Stacks Ecosystem</span>
+            </div>
+          </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Everything you need to build on Stacks
           </h2>
