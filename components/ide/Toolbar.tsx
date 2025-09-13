@@ -34,6 +34,7 @@ const Toolbar: React.FC = () => {
   const activeFile = activeProject?.files.find(f => f.id === state.activeFile)
 
   // Clear deployed transaction ID when active file changes
+  
   useEffect(() => {
     setDeployedTxId(null)
   }, [state.activeFile])
