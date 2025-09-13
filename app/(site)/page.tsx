@@ -2,7 +2,7 @@
 'use client'
 
 import React from 'react'
-import {  ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Features from '@/components/section/features/Features'
 import HowItWorks from '@/components/section/how-it-works/HowItWorks'
@@ -12,6 +12,7 @@ import Waitlist from '@/components/section/waitlist/Waitlist'
 import { FcLinux } from 'react-icons/fc'
 import { FaWindows } from 'react-icons/fa6'
 import { FaApple } from 'react-icons/fa'
+import BodySection from '@/components/section/body/BodySection'
 
 interface ButtonProps {
     variant: 'primary' | 'secondary'
@@ -40,13 +41,13 @@ const HeroButton: React.FC<ButtonProps> = ({ variant, children, href = '#' }) =>
 const DownloadIcon: React.FC<{
     platform: 'windows' | 'mac' | 'linux'
     onComingSoon: (platform: string) => void
-}> = ({ platform, onComingSoon }) => {
+}> = ({ platform }) => {
     const [showTooltip, setShowTooltip] = React.useState(false)
 
     const iconMap = {
         windows: <FaWindows className="w-8 h-8" />,
         mac: <FaApple className="w-8 h-8" />,
-        linux: <FcLinux className="w-8 h-8"/>
+        linux: <FcLinux className="w-8 h-8" />
     }
 
     const platformNames = {
@@ -107,7 +108,7 @@ const HeroSection: React.FC = () => {
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center lg:justify-start">
                             <HeroButton variant="primary" href="#waitlist">
-                                Join Waitlist
+                                Get Started
                                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                             </HeroButton>
                             <HeroButton variant="secondary" href="#demo">
@@ -117,7 +118,7 @@ const HeroSection: React.FC = () => {
 
                         {/* Download Section */}
                         <div className="space-y-4">
-                            <p className="text-sm font-medium text-gray-700">
+                            <p className="text-sm font-medium text-gray-400">
                                 Desktop apps coming soon for
                             </p>
                             <div className="flex items-center space-x-4">
@@ -134,18 +135,18 @@ const HeroSection: React.FC = () => {
                         <div className="mt-8 pt-8 border-t border-gray-200">
                             <div className="flex items-center space-x-2">
                                 <span className="text-sm text-gray-500">Powered by</span>
-                                <a 
-                                    href="https://stacks.co" 
-                                    target="_blank" 
+                                <a
+                                    href="https://stacks.co"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center space-x-2 px-3 py-1.5 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
                                 >
-                                   <Image
-                                   className='rounded-md'
-                             src={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAY1BMVEX8ZDL////8hF39x7X/+fj9mHf8eEz8Zzb8bD38ZTP8aTn9vaj/8u79qo//6uP9nX78fVP/2Mz8gFf8iWP8cUP8jmr/4tn9spr/9PH/3dP/08X8k3H/59/8ooT9zLz9rJL9w6/kXZ75AAAEVklEQVR4nO2c65aqMAyFRUFuyiBeET36/k95xuXgJCNCC7YE3N9Pl3Xt0E0bS8JkAgAAsgj7FvA2xhMJAAAAAIB0kHkBAAAAAAAARIA/J+LAlAAAAAAAAAuExfLOOdUf7K+/7nib9yvTZO+UuPqRXB+DkxaX4a1s3IcWJw80B29/xzpXA+J0oIE4sebYBRn7z4w+ZcIZEeNu2w9dm1KoSkQv6y7SGPlFBjpLYwKVOVM9e/Vxm4SMS3xzAlXx25mrgydNEZzaXFo2kRejApVpY/bgQMbkOreWSa5ElJpLwn90yNS0QFXYfXtS2RbZJGqsEKahW7TKtpjSNXslxVg32BLU6BS+Ys1tCFSFZRuN966nOYE2WdOca1b/3ZSuWEcBWyEjple5PidfkW8eRBnrxpyuXKu6lYsZS8hWSNkqJvRzsStWCTXX66zcP1JjZTYFquJTc71M6JfUWIVVgcoU1FwvtmtmrFzqAzNmrsqcK6LGWog01o0oJzIrE/o9+YLzZV2gMgXVWZHQs6OKo1Rj3aBX/NlcPtsK+z7JqiXYEalPCT1bsc69CFRmWrMtZjTHmknLsf7CVi6W0IdsK9Q9lbQOO4rYUbnsuEHAOVYTLEknCT1L9K+SV6wStlc89ryQLgOL/p8iKMA2k8cJPTPWsVeBqlyo5HJ1YquZk8i41aOtV8OeSf6++l5RFJcD/zA/1/2Epa2SJbBmsHMgcWkW0hXXSiBxs5DOWNn2EQgCQSAfEsiyWUdXDjbimGzyZiXdcC0l+eF8ahYZmRgAAAAAhkUWz8yytJOjZIfmtK8jdkpO981COmPlaHg0f6wQCAJBIB8SiNesoysnG3FM/P3BreFZVtWHdb/gJrZaF4J5DV7CFcfTNE2LI48jTut+QsgjePa0sKyciWj1hrMbwkNdHsislJzRT/NeBSrCap0Wv3nsUCqcHjDBpHImYg/axVXJPsGKTVnlTMbKS6XfJaxC88/jdHaM7/UkUJW6kqxgQObixvprn1RkG08VvN3quXJmMJVObMWqqJf1qbkSueZiJVmVBwistkZcx0UJM9aLkixW/yHVXKyT7UUCy9vdZJqLZVMvm3oy8eYKFG9kttMINFeo2lUptJfygXor4lx0gbxO57Foc7EC7IZGHV7rL6uJxGMl8U12YR2uuaSVK9B8XwLLuSS1Lej+jWV/hwU1kuj33rLeXqXGcRu0UcVil9LQzg6DFXe4kK5cQtrfWPvhVXXUXKtx3Ab670m40/Z9KsZo3clGkzOnf3Ppvu7hF1lHESzHOuk16pzpzdV3Y/uUaNHOyam5VkbkqbMh/tC+Y2nHa+/vsMjy5M6pMVd8Zp0vfoj7vke+t7boTqsk1g9+eLcqAAAAAAAAAABaSHvs9emMZT4Qh3BGG9hAqLj+g5ySatGDDGUc4NIDA4Qj8dVIwhhNIGPx1VjmQzkO6fFK1/dpYD5EgekQxWimYySBjCSMzuA6gHb8B38sM5NakHIYAAAAAElFTkSuQmCC'}
-                  height={25}
-                  width={25} alt='stacks' />
-                                    <span className="text-sm font-medium text-gray-700">Stacks Blockchain</span>
+                                    <Image
+                                        className='rounded-md'
+                                        src={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAY1BMVEX8ZDL////8hF39x7X/+fj9mHf8eEz8Zzb8bD38ZTP8aTn9vaj/8u79qo//6uP9nX78fVP/2Mz8gFf8iWP8cUP8jmr/4tn9spr/9PH/3dP/08X8k3H/59/8ooT9zLz9rJL9w6/kXZ75AAAEVklEQVR4nO2c65aqMAyFRUFuyiBeET36/k95xuXgJCNCC7YE3N9Pl3Xt0E0bS8JkAgAAsgj7FvA2xhMJAAAAAIB0kHkBAAAAAAAARIA/J+LAlAAAAAAAAAuExfLOOdUf7K+/7nib9yvTZO+UuPqRXB+DkxaX4a1s3IcWJw80B29/xzpXA+J0oIE4sebYBRn7z4w+ZcIZEeNu2w9dm1KoSkQv6y7SGPlFBjpLYwKVOVM9e/Vxm4SMS3xzAlXx25mrgydNEZzaXFo2kRejApVpY/bgQMbkOreWSa5ElJpLwn90yNS0QFXYfXtS2RbZJGqsEKahW7TKtpjSNXslxVg32BLU6BS+Ys1tCFSFZRuN966nOYE2WdOca1b/3ZSuWEcBWyEjple5PidfkW8eRBnrxpyuXKu6lYsZS8hWSNkqJvRzsStWCTXX66zcP1JjZTYFquJTc71M6JfUWIVVgcoU1FwvtmtmrFzqAzNmrsqcK6LGWog01o0oJzIrE/o9+YLzZV2gMgXVWZHQs6OKo1Rj3aBX/NlcPtsK+z7JqiXYEalPCT1bsc69CFRmWrMtZjTHmknLsf7CVi6W0IdsK9Q9lbQOO4rYUbnsuEHAOVYTLEknCT1L9K+SV6wStlc89ryQLgOL/p8iKMA2k8cJPTPWsVeBqlyo5HJ1YquZk8i41aOtV8OeSf6++l5RFJcD/zA/1/2Epa2SJbBmsHMgcWkW0hXXSiBxs5DOWNn2EQgCQSAfEsiyWUdXDjbimGzyZiXdcC0l+eF8ahYZmRgAAAAAhkUWz8yytJOjZIfmtK8jdkpO981COmPlaHg0f6wQCAJBIB8SiNesoysnG3FM/P3BreFZVtWHdb/gJrZaF4J5DV7CFcfTNE2LI48jTut+QsgjePa0sKyciWj1hrMbwkNdHsislJzRT/NeBSrCap0Wv3nsUCqcHjDBpHImYg/axVXJPsGKTVnlTMbKS6XfJaxC88/jdHaM7/UkUJW6kqxgQObixvprn1RkG08VvN3quXJmMJVObMWqqJf1qbkSueZiJVmVBwistkZcx0UJM9aLkixW/yHVXKyT7UUCy9vdZJqLZVMvm3oy8eYKFG9kttMINFeo2lUptJfygXor4lx0gbxO57Foc7EC7IZGHV7rL6uJxGMl8U12YR2uuaSVK9B8XwLLuSS1Lej+jWV/hwU1kuj33rLeXqXGcRu0UcVil9LQzg6DFXe4kK5cQtrfWPvhVXXUXKtx3Ab670m40/Z9KsZo3clGkzOnf3Ppvu7hF1lHESzHOuk16pzpzdV3Y/uUaNHOyam5VkbkqbMh/tC+Y2nHa+/vsMjy5M6pMVd8Zp0vfoj7vke+t7boTqsk1g9+eLcqAAAAAAAAAABaSHvs9emMZT4Qh3BGG9hAqLj+g5ySatGDDGUc4NIDA4Qj8dVIwhhNIGPx1VjmQzkO6fFK1/dpYD5EgekQxWimYySBjCSMzuA6gHb8B38sM5NakHIYAAAAAElFTkSuQmCC'}
+                                        height={25}
+                                        width={25} alt='stacks' />
+                                    <span className="text-sm font-medium text-gray-400">Stacks Blockchain</span>
                                 </a>
                             </div>
                         </div>
@@ -165,11 +166,13 @@ const HomePage: React.FC = () => {
     return (
         <>
             <HeroSection />
+            <BodySection/>
             <Features />
             <HowItWorks />
             <CodeDemo />
             <Waitlist />
             <CallToAction />
+            
         </>
     )
 }

@@ -46,7 +46,7 @@ const CallToAction: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <CTAButton 
             variant="primary" 
-            href="#waitlist"
+            href=""
             icon={<ArrowRight className="w-5 h-5" />}
           >
             Join the Waitlist

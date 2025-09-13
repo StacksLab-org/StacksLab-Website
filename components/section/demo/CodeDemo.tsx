@@ -35,7 +35,7 @@ const CodeDemo: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
               Write Clarity contracts with confidence
             </h2>
-            <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Our interactive environment lets you write, test, and debug Clarity smart contracts 
               with real-time feedback. See your code in action before deploying to mainnet.
             </p>
@@ -43,15 +43,15 @@ const CodeDemo: React.FC = () => {
             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               <div className="flex items-center justify-center lg:justify-start">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-300">Syntax highlighting and auto-completion</span>
+                <span className="text-sm sm:text-base text-gray-400">Syntax highlighting and auto-completion</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-300">Real-time error detection</span>
+                <span className="text-sm sm:text-base text-gray-400">Real-time error detection</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-300">Interactive testing environment</span>
+                <span className="text-sm sm:text-base text-gray-400">Interactive testing environment</span>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ const CodeDemo: React.FC = () => {
                 <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
               </div>
-              <span className="text-gray-300 text-xs sm:text-sm truncate mx-2">token-contract.clar</span>
+              <span className="text-gray-400 text-xs sm:text-sm truncate mx-2">token-contract.clar</span>
               <div className="flex items-center space-x-1 sm:space-x-2">
                 <button
                   onClick={handleCopy}
@@ -85,7 +85,7 @@ const CodeDemo: React.FC = () => {
 
             {/* Code Content */}
             <div className="p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-x-auto">
-              <pre className="text-gray-300 leading-relaxed">
+              <pre className="text-gray-400 leading-relaxed">
                 <code>
                   <span className="text-purple-400">(define-public</span> <span className="text-blue-400">(transfer</span> <span className="text-yellow-400">(amount uint)</span> <span className="text-yellow-400">(recipient principal)</span><span className="text-blue-400">)</span>
                   {'\n'}  <span className="text-purple-400">(begin</span>
