@@ -145,21 +145,26 @@ const Toolbar: React.FC = () => {
         codeBody: activeFile.content,
         network: STACKS_TESTNET,
         onFinish: (data: unknown) => {
-          const txId = data.txId
-          setDeployedTxId(txId)
-          setIsDeploying(false)
+          if (data && typeof data === 'object' && 'txId' in data) {
+            const txId = (data as { txId: string }).txId
+            setDeployedTxId(txId)
+            setIsDeploying(false)
 
-          // Success message in toolbar area
-          addTerminalOutput('success', `✓ Contract "${contractName}" deployed successfully!`)
+            // Success message in toolbar area
+            addTerminalOutput('success', `✓ Contract "${contractName}" deployed successfully!`)
 
-          // Detailed deployment info in terminal
-          addTerminalOutput('info', '=== DEPLOYMENT DETAILS ===')
-          addTerminalOutput('info', `Contract Name: ${contractName}`)
-          addTerminalOutput('info', `Network: Stacks Testnet`)
-          addTerminalOutput('info', `Transaction ID: ${txId}`)
-          addTerminalOutput('info', `Explorer: https://explorer.hiro.so/txid/${txId}?chain=testnet`)
-          addTerminalOutput('info', `Status: Pending confirmation...`)
-          addTerminalOutput('info', '========================')
+            // Detailed deployment info in terminal
+            addTerminalOutput('info', '=== DEPLOYMENT DETAILS ===')
+            addTerminalOutput('info', `Contract Name: ${contractName}`)
+            addTerminalOutput('info', `Network: Stacks Testnet`)
+            addTerminalOutput('info', `Transaction ID: ${txId}`)
+            addTerminalOutput('info', `Explorer: https://explorer.hiro.so/txid/${txId}?chain=testnet`)
+            addTerminalOutput('info', `Status: Pending confirmation...`)
+            addTerminalOutput('info', '========================')
+          } else {
+            setIsDeploying(false)
+            addTerminalOutput('error', 'Deployment completed but received unexpected response format')
+          }
         },
         onCancel: () => {
           setIsDeploying(false)
@@ -302,21 +307,7 @@ const Toolbar: React.FC = () => {
       {/* Right Side - Project Actions */}
       <div className="flex items-center space-x-2">
         {/* Wallet Connection Status */}
-        {!wallet.isConnected ? (
-          <button
-            onClick={() => {
-              const { connectWallet } = require('@/contexts/WalletContext')
-              // For development, trigger mock connection
-              const mockAddress = 'SP2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKNRV9EJ7'
-              localStorage.setItem('stacks-wallet-address', mockAddress)
-              window.location.reload() // Simple reload to trigger wallet state update
-            }}
-            className="flex items-center space-x-2 px-3 py-1.5 bg-blue-50 text-blue-600 border border-blue-300 hover:bg-blue-100 transition-colors text-sm"
-            title="Connect Wallet (Mock for Development)"
-          >
-            <span>Connect Wallet</span>
-          </button>
-        ) : (
+        {
           userData && (
             <button
               type="button"
@@ -324,8 +315,8 @@ const Toolbar: React.FC = () => {
             >
               {abbreviateAddress(userData?.profile.stxAddress.mainnet)}
             </button>
-          )
-        )}
+
+          )}
         <button
           onClick={handleExport}
           disabled={!activeProject}
