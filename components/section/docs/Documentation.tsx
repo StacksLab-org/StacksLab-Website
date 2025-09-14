@@ -1,7 +1,7 @@
 // File: components/section/docs/Documentation.tsx
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import {
     ChevronRight,
     ChevronDown,
@@ -28,7 +28,7 @@ interface DocumentationProps {
 }
 
 const Documentation: React.FC<DocumentationProps> = ({ className = '' }) => {
-    const docSections: DocSection[] = [
+    const docSections: DocSection[] = useMemo(() => [
         {
             id: 'getting-started',
             title: 'Getting Started',
@@ -68,7 +68,7 @@ const Documentation: React.FC<DocumentationProps> = ({ className = '' }) => {
                 { id: 'advanced-patterns', title: 'Advanced Patterns', icon: HelpCircle }
             ]
         }
-    ]
+    ], [])
 
     const [activeSection, setActiveSection] = useState('introduction')
     const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['getting-started', 'smart-contracts']))
@@ -181,7 +181,7 @@ const Documentation: React.FC<DocumentationProps> = ({ className = '' }) => {
                             <div className="border-l-4 border-blue-500 pl-6">
                                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Step 2: Create Your First Contract</h3>
                                 <p className="text-gray-600 mb-4">
-                                    Use our template to create a simple "Hello World" contract.
+                                    Use our template to create a simple &ldquo;Hello World&rdquo; contract.
                                 </p>
                                 <div className="bg-gray-900 rounded-lg p-4 relative">
                                     <div className="flex items-center justify-between mb-2">
@@ -227,7 +227,7 @@ const Documentation: React.FC<DocumentationProps> = ({ className = '' }) => {
                             <h3 className="text-lg font-semibold text-yellow-900 mb-2">What is Clarity?</h3>
                             <p className="text-yellow-800">
                                 Clarity is a decidable smart contract language that optimizes for predictability and security.
-                                It's designed to be more secure and predictable than other smart contract languages.
+                                It&apos;s designed to be more secure and predictable than other smart contract languages.
                             </p>
                         </div>
 
@@ -325,7 +325,7 @@ const Documentation: React.FC<DocumentationProps> = ({ className = '' }) => {
                                     </div>
                                     <div className="border-l-4 border-green-500 pl-6">
                                         <h4 className="font-semibold text-gray-900 mb-2">3. Connect to StacksLab</h4>
-                                        <p className="text-gray-600">Click "Connect Wallet" in StacksLab to link your wallet.</p>
+                                        <p className="text-gray-600">Click &quot;Connect Wallet&quot; in StacksLab to link your wallet.</p>
                                     </div>
                                 </div>
                             </div>
@@ -582,7 +582,7 @@ const Documentation: React.FC<DocumentationProps> = ({ className = '' }) => {
                         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                             <h3 className="text-lg font-semibold text-blue-900 mb-2">Tutorial Overview</h3>
                             <p className="text-blue-800">
-                                We'll build a simple counter contract that demonstrates the core concepts of Clarity development.
+                                We&apos;ll build a simple counter contract that demonstrates the core concepts of Clarity development.
                             </p>
                         </div>
 
@@ -608,7 +608,7 @@ const Documentation: React.FC<DocumentationProps> = ({ className = '' }) => {
                             <div className="border-l-4 border-green-500 pl-6">
                                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Step 2: Test the Contract</h3>
                                 <p className="text-gray-600 mb-4">
-                                    Use StacksLab's testing framework to verify your contract works correctly.
+                                    Use StacksLab&apos;s testing framework to verify your contract works correctly.
                                 </p>
                                 <button className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors">
                                     Run Tests
