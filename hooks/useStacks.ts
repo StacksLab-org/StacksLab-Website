@@ -20,8 +20,8 @@ import {
     function connectWallet() {
       showConnect({
         appDetails: {
-          name: "Stacks Account History",
-          icon: "https://cryptologos.cc/logos/stacks-stx-logo.png",
+          name: "StacksLab",
+          icon: "https://avatars.githubusercontent.com/u/231766800?s=400&u=252add02370d1b05ace6d96f7afc90f0c69bb588&v=4",
         },
         onFinish: () => {
           // reload the webpage when wallet connection succeeds
