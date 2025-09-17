@@ -1,7 +1,7 @@
 // File: components/ui/MobileExperienceDialog.tsx
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { X, Monitor, Smartphone } from 'lucide-react'
 
 interface MobileExperienceDialogProps {
@@ -41,14 +41,14 @@ const MobileExperienceDialog: React.FC<MobileExperienceDialogProps> = ({ isOpen,
                         <div>
                             <h3 className="font-medium text-gray-900 mb-2">Mobile Development Limitations</h3>
                             <p className="text-sm text-gray-600 leading-relaxed">
-                                StacksLab is optimized for desktop development. While you can browse and explore on mobile, 
+                                StacksLab is optimized for desktop development. While you can browse and explore on mobile,
                                 the full IDE experience with code editing, debugging, and testing works best on a PC or laptop.
                             </p>
                         </div>
                     </div>
 
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-                        <h4 className="font-medium text-blue-900 mb-2">What you'll get on desktop:</h4>
+                        <h4 className="font-medium text-blue-900 mb-2">What you&apos;ll get on desktop:</h4>
                         <ul className="text-sm text-blue-800 space-y-1">
                             <li>• Full-featured code editor with syntax highlighting</li>
                             <li>• Integrated terminal and debugging tools</li>
@@ -68,7 +68,7 @@ const MobileExperienceDialog: React.FC<MobileExperienceDialogProps> = ({ isOpen,
                             onClick={onDismiss || onClose}
                             className="w-full text-gray-600 hover:text-gray-800 px-4 py-2 text-sm font-medium transition-colors duration-200"
                         >
-                            Don't show this again
+                            Don&apos;t show this again
                         </button>
                     </div>
                 </div>
