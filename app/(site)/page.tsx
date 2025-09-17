@@ -13,6 +13,8 @@ import { FcLinux } from 'react-icons/fc'
 import { FaWindows } from 'react-icons/fa6'
 import { FaApple } from 'react-icons/fa'
 import BodySection from '@/components/section/body/BodySection'
+import MobileExperienceDialog from '@/components/ui/MobileExperienceDialog'
+import { useMobileDetection } from '@/hooks/useMobileDetection'
 
 interface ButtonProps {
     variant: 'primary' | 'secondary'
@@ -163,8 +165,15 @@ const HeroSection: React.FC = () => {
 }
 
 const HomePage: React.FC = () => {
+    const { showMobileDialog, closeMobileDialog, dismissMobileDialog } = useMobileDetection()
+
     return (
         <>
+            <MobileExperienceDialog 
+                isOpen={showMobileDialog} 
+                onClose={closeMobileDialog}
+                onDismiss={dismissMobileDialog}
+            />
             <HeroSection />
             <BodySection/>
             <Features />
